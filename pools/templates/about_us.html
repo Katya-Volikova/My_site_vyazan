@@ -1,0 +1,972 @@
+ <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вязань</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="index.html">
+</head>
+<style>
+* {
+    box-sizing: border-box;
+}
+html {
+    overflow-x: none;
+}
+h1, h2, h3, ul, li, a, p {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+    color: #131212;
+}
+.container {
+    max-width: 940px;
+    width: 100%;
+    margin: 0 auto;
+}
+.heading {
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 66px;
+    border-bottom: 1px solid;
+    display: inline-block;
+}
+.headingM {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+}
+.header {
+    padding-top: 6px;
+}
+.header__nav {
+    padding: 19px 0 22px;
+    position: relative;
+}
+.header__nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.header__nav-list {
+    display: flex;
+    align-items: center;
+}
+.header__nav-item:not(:last-child) {
+    margin-right: 25px;
+}
+.header__nav-link {
+    font-size: 13px;
+    color: #131212;
+    line-height: 17px;
+    transition: .3s ease;
+}
+.header__nav-link:hover {
+    color: #7A7272;
+}
+.header__nav-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -67px;
+    margin-top: -28px;
+}
+.nav__item-catalog {
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    padding: 30px 0 30px 23px;
+    background: #fff;
+    z-index: 10;
+}
+.nav-catalog__wrapper {
+    max-width: 523px;
+    width: 100%;   
+}
+.catalog__menu-choice {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: baseline; */
+}
+.W6-14-item:nth-child(4) {
+    margin-top: 36px;
+}
+.b6-5-item, .B6-14-item {
+    display: none;
+}
+.nav__item-catalog, .man, .child {
+    display: none;
+}
+
+.catalog__menu-item {
+    margin-bottom: 19px;
+    cursor: pointer;
+}
+.catalog__menu-itemActive {
+    color: #131212;
+    font-weight: 500;
+}
+.sale {
+    color: #BD2020;
+}
+.menu__choice-item .menu__choice-link:not(:last-child) {
+    margin-bottom: 6px;
+}
+.mainScreen {
+    background-color: #CDCFCF;
+}
+
+.mainScreen_fabric {
+    background-color: rgba(205, 207, 207, 0.7)
+}
+.mainScreen__wrapper {
+    max-width: 940px;
+    width: 100%;
+    padding: 51px 0 33px;
+    position: relative;
+}
+.mainScreen__wrapper_fabric{
+    padding: 17px 0 31px;
+}
+.mainScreen__text-descr {
+    max-width: 503px;
+    width: 100%;
+    margin-top: 21px;
+}
+.mainScreen__text-descr_fabric {
+    max-width: 900px;
+    width: 100%;
+    margin-top: 21px;
+}
+.mainScreen__products {
+    margin-top: 70px;
+    display: flex;
+}
+.mainScreen__products-item {
+    color: #131212;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+}
+.products-item__name {
+    border-bottom: 1px solid ;
+    display: inline-block;
+}
+.mainScreen__products-item:not(:last-child) {
+    margin-right: 37px;
+}
+.products-item__price {
+    margin-top: 4px;
+}
+.mainScreen__pic-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 358px;
+    height: 535px;
+}
+.catalog {
+    padding: 17px 0 85px;
+}
+.catalog__wrapper {
+    margin-top: 17px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(8, 9vw);
+    grid-gap: 17px;
+}
+
+.catalog__wrapper-item {
+    position: relative;
+    display: block;
+    transition: .3s ease;
+    cursor: pointer;
+}
+.catalog__wrapper-item:hover {
+    box-shadow: 0 4px 15px #7A7272;
+}
+.catalo-item__price {
+    position: absolute;
+    left: 14px;
+    bottom: 13px;
+}
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.item-1 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+.item-2 {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.item-3 {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+.item-4 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+.item-5 {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+.item-6 {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+.mainScreen__products-item {
+    transition: .3s ease;
+}
+.mainScreen__products-item:hover {
+    color: #7A7272;
+}
+.banner__wrapper {
+    padding: 43px 35px;
+    background-color: #CDCFCF;
+}
+.banner__content {
+    font-size: 35px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 42px;
+}
+.banner__wrapper_fabric {
+    padding: 43px 49px 54px 35px;
+    background-color: rgba(205, 207, 207, 0.7);
+}
+.banner__content_fabric {
+    font-size: 35px;
+    font-weight: 600;
+    color: rgba(81, 34, 36, 1);
+    line-height: 42px;
+}
+.banner_log {
+    
+    margin: 0 auto;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+  
+
+}
+.banner__wrapper_log {
+    
+width: 600px;
+height: 750px;
+left: 173px;
+top: 337px;
+background: rgba(29, 64, 127, 0.35);
+padding: 80px 90px 714px 90px;
+border-radius: 93px;
+}
+.banner__wrapper_email_log {
+    
+width: 500px;
+height: 100px;
+left: 272px;
+top: 684px;
+background: rgba(246, 254, 255, 1);
+border-radius: 20px;
+}
+.banner__content_log {
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 35px;
+line-height: 67px;
+text-align: center;
+
+color: #F6FEFF;
+
+}
+.banner__content_email_log {
+
+    font-family: 'Inter';
+    font-style: light;
+    font-size: 25px;
+    Line-height: 42px;
+    color: #BCB8B8;
+    
+}
+    .banner__content_password_log {
+
+    font-family: 'Inter';
+    font-style: light;
+    font-size: 25px;
+    Line-height: 42px;
+    color: #BCB8B8;
+        
+        }
+.sertificate {
+    margin-top: 42px;
+    padding-bottom: 35px;
+}
+.sertificate__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.sertificate__text {
+    max-width: 640px;
+}
+.sertificate__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.Woolmark-icon {
+    width: 158px;
+}
+.btn {
+    background: none;
+    border: 1px solid #131212;
+    color: #131212;
+    font-weight: 300;
+    cursor: pointer;
+    transition: .3s ease;
+    outline: none;
+}
+.btn:hover {
+    border: 1px solid #7A7272;
+    color: #7A7272;
+    box-shadow: 0 4px 15px #7A7272;
+}
+.sertificate__content-btn {
+    margin-top: 22px;
+    padding: 11px 25px;
+}
+.catalog2 {
+    padding-bottom: 115px;
+}
+.construct {
+    padding: 38px 0 52px;
+}
+.construct__wrapper-text {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.construct__look {
+    margin-top: 70px;
+    padding: 650px 56px 654px;
+    background-image: url('../img/looks.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.construct__look-text {
+    padding: 23px 49px 45px;
+    background-color: #fff;
+    color: #131212;
+    transition: .3s ease;
+}
+.construct__look-text:hover {
+    box-shadow: 0 4px 15px #F4F4F4;
+}
+.catalog3  .catalo-item__price {
+    top: 22px;
+    left: 17px;
+}
+.catalog3 {
+    padding-bottom: 52px;
+}
+.care {
+    padding-bottom: 50px;
+}
+.cards-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.cards-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+.catalog-img {
+    transition: .3s ease;
+}
+.catalog-img:hover {
+    box-shadow: 0 4px 15px #7A7272;
+}
+.care__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 11px;
+}
+.care__text {
+    max-width: 630px;
+}
+.care__text:not(:last-child) {
+    margin-bottom: 15px;
+}
+.banner__wrapper2 {
+    display: flex;
+    align-items: center;
+}
+.banner__content2 {
+    max-width: 736px;
+    width: 100%;
+}
+.banner-date__num {
+    font-size: 96px;
+    line-height: 93px;
+}
+.banner-date__day {
+    font-size: 40px;
+    line-height: 36px;
+}
+.banner__wrapper2-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer {
+    padding: 66px 0 70px;
+}
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__wrapper-nav {
+    display: flex;
+}
+.footer__nav {
+    display: flex;
+    flex-direction: column;
+}
+.footer__nav:not(:last-child) {
+    margin-right: 36px;
+}
+.footer__nav-item:not(:last-child) {
+    margin-bottom: 17px;
+}
+.footer__link-social {
+    border-bottom: 1px solid rgb(19, 18, 18);
+    transition: .3s ease;
+}
+.footer__link-social:hover {
+    border-bottom: 1px solid #7A7272;
+}
+.footer__elem-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.footer__form-input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(19, 18, 18);
+    max-width: 190px;
+    font-size: 15px;
+}
+.footer__form-btn {
+    padding: 8px 10px;
+}
+.footer__copiwriter {
+    font-size: 15px;
+    color: #BCB8B8;
+    margin-top: 30px;
+}
+.mainScreen__text-headingMob, 
+.header__nav-burger {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .container {
+        padding: 0 10px;
+    }
+    .catalog {
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 850px) {
+    .header__nav-link {
+        max-width: 300px;
+        width: 100%;
+    }
+    .footer__form-btn {
+        font-size: 14px;
+    }
+}
+@media (max-width: 500px) {
+    .header {
+        padding: 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .catalog,
+    .sertificate {
+        padding: 15px 0 18px;
+        margin: 0;
+    }
+    .construct,
+    .sertificate {
+        padding: 15px 0 0;
+    }
+    body {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .heading {
+        font-size: 30px;
+        line-height: 37px;
+    }
+    .mainScreen__pic-img {
+        display: none;
+    }
+    .mainScreen__fabric-img{
+        display: none;
+    }
+    .mainScreen {
+        background-image: url("../img/mainMob.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    .mainScreen__text-descr {
+        display: none;
+    }
+    .mainScreen__text-heading {
+        display: none;
+    }
+    .mainScreen__wrapper {
+        padding: 324px 0 349px;
+    }
+    .mainScreen__text-headingMob {
+        display: block;
+        color: #fff;
+        font-size: 40px;
+        font-weight: 900;
+    }
+    .mainScreen__products {
+        display: none;
+    }
+    .header__nav-burger {
+        display: block;
+        background: none;
+        border: none;
+    }
+    .catalog__wrapper {
+        margin-top: 13px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(8, 18vw);
+    }
+    .catalo-item__price {
+        font-size: 10px;
+    }
+    .item-4,
+    .item-5,
+    .item-6 {
+        display: none;
+    }
+    .item-1 {
+        grid-column-end: 7;
+        grid-row-end: 7;
+
+    }
+    .item-2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 7;
+        grid-row-end: 9;
+    }
+    .item-3 {
+        grid-column-start: 4;
+        grid-column-end: 7;
+        grid-row-start: 7;
+        grid-row-end: 9;
+    }
+    .banner__content {
+        font-weight: 400;
+    }
+    .catalo-item__price {
+        left: 8px;
+        bottom: 6px;
+        line-height: 12px;
+    }
+    .banner__wrapper {
+        padding: 9px 8px;
+    }
+    .banner__content {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    .Woolmark-icon {
+        width: 91px;
+    }
+    .sertificate__content {
+        justify-content: flex-start;
+    }
+    .sertificate__content-btn {
+        padding: 5px 9px;
+        margin-top: 15px;
+    }
+    .sertificate__text {
+        max-width: 240px;
+    }
+    .construct__heading {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .construct__wrapper-text {
+        flex-direction: column;
+        margin-top: 6px;
+    }
+    .wrapper-text__content:not(:last-child) {
+        margin-bottom: 3px;
+    }
+    .construct__look {
+        margin-top: 17px;
+        background-size: contain;
+        padding: 225px 54px;
+    }
+    .construct__look-text {
+        padding: 15px;
+        display: inline-block;
+    }
+    .look-text__descr {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .item-1 .catalo-item__price {
+        display: none;
+    }
+    .catalog3 .catalo-item__price {
+        top: inherit;
+        bottom: 6px;
+        left: 8px;
+    }
+    .catalog-img {
+        width: 128px;
+    }
+    .care {
+        padding: 0;
+    }
+    .care__wrapper {
+        margin-top: 7px;
+    }
+    .care-item {
+        font-size: 7px;
+        line-height: 8px;
+    }
+    .care__text {
+        max-width: 200px;
+        width: 100%;
+    }
+    .care__text:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    .care__text:last-child {
+        display: none;
+    }
+    .care__wrapper-cards {
+        display: flex;
+        flex-direction: column;
+    }
+    .banner__wrapper2 {
+        justify-content: space-between;
+    }
+    .banner__content2 {
+        max-width: 230px;
+    }
+    .banner-date__num {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 60px;
+    }
+    .banner-date__day {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+    }
+    .footer {
+        padding: 15px 0 40px;
+    }
+    .footer__nav-item:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    .header__nav-link {
+        font-size: 14px;
+    }
+    .footer__copiwriter {
+        margin-top: 20px;
+    }
+    .footer__elem {
+        display: none;
+    }
+    .header {
+        position: relative;
+    }
+    .header__nav {
+        padding-top: 60px;
+    }
+    .header__nav-wrapper-mob {
+        display: flex;
+        flex-direction: column;
+        justify-content: inherit;
+        position: absolute;
+        height: 100vh;
+        width: 70%;
+        left: -10px;
+        padding-left: 10px;
+    }
+    .header__nav-list-mob {
+        flex-direction: column;
+        align-items: inherit;
+    }
+    .header__nav-logo {
+        position: absolute;
+        top: -10px;
+        left: 100%;
+        margin-left: -134px;
+    }
+    .header__nav-right {
+        display: none;
+    }
+    .header__nav-left {
+        margin-top: 30px;
+        display: none;
+    }
+    .header__nav-left .header__nav-item:not(:last-child) {
+        margin-bottom: 8px;
+    }
+    .header__nav-cart {
+        max-width: 20px;
+        padding: 0;
+        right: 10px;
+        top: 30px;
+    }
+    .header__nav-burger {
+        position: absolute;
+        top: 50%;
+    }
+}
+</style>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <button class="header__nav-burger" id="burger">
+                    <img src="img.burger.svg" alt="menu">
+                </button>
+                <div class="header__nav-wrapper header__nav-wrapper-mob">
+                    <ul class="header__nav-list header__nav-left header__nav-list-mob">
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link" id="catalog">Каталог</a>
+
+                        </li>
+
+
+
+                        <li class="header__nav-item">
+                            <a href="#CARE" class="header__nav-link">Уход</a>
+
+                        </li>
+                       <li class="header__nav-item">
+                           <a href="index.html" class="header__nav-link">Главная</a>
+                    </li>
+                    </ul>
+                    <div class="header__nav-logo">
+                        <img src="img/logo.svg" alt="Вязань" class="img-logo">
+                    </div>
+                    <ul class="header__nav-list header__nav-right header__nav-list-mob">
+                        <li class="header__nav-item">
+                            <a href="#contacts" class="header__nav-link">Контакты</a>
+                        </li>
+
+                        <li class="header__nav-item">
+                            <a href="log_in.html" class="header__nav-link">Войти</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">
+                                <img src="img/icons/cart.svg" alt="cart" class="icon-cart">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="header__nav-cart header__nav-burger">
+                    <img src="./img/icons/cart.svg" alt="cart">
+                </button>
+            </nav>
+        </div>
+        <div class="mainScreen_fabric">
+            <div class="container">
+                <div class="mainScreen__wrapper_fabric">
+                    <div class="mainScreen__text">
+                       
+                        <img src="img/main_fabric.png" alt="fabric_main_picture" class="mainScreen__fabric-img">
+                        <p class="mainScreen__text-descr_fabric">
+                            Швейное производство «Вязань» открылось в 2017 году. Уже 5 лет
+                            мы занимаемся пошивом женской, мужской и детской одежды. Наши конструкторы создают эффектные образы вне трендов. На свидании
+                            или в офисе, в кино или на прогулке, в путешествии или во время важной презентации — в Вязани вы чувствуете себя комфортно и уверенно всегда. 
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+                    </a>
+    <section class="sertificate">
+        <div class="container">
+            <div class="sertificate__wrapper">
+                <p class="sertificate__text">
+                    Мы делаем вещи из шерсти мериносов. Материал натуральный, экологичный и гиппоалергенный. Одежда
+                    имеет знак австралийской компании Woolmark — это подтверждает, что в ее составе
+                    нет химии, и она не вызывает аллергию. Изделия подойдут даже для чувствительной кожи. Вещи мягкие,
+                    неколючие, а главное теплые.
+                </p>
+                <div class="sertificate__content">
+                    <a href="#" class="sertificate__content-link">
+                        <img src="img/icons/Woolmark.svg" alt="Woolmark" class="Woolmark-icon">
+                    </a>
+                    <button class="sertificate__content-btn btn">
+                        Сертификаты
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="banner">
+        <div class="container">
+            <div class="banner__wrapper_fabric">
+                <p class="banner__content_fabric">
+                    Лекала, форма, цвет, вязка — мы выверяем всё,
+                    чтобы создавать вещи с идеальной посадкой,
+                    которые носятся годами.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <a name="contacts"></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__wrapper-nav">
+                    <ul class="footer__nav">
+                        <li class="footer__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Каталог
+                            </a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Фабрика
+                            </a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#CARE" class="header__nav-link">Уход</a>
+                        </li>
+                        <!-- <li class="footer__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Опт
+                            </a>
+                        </li> -->
+                    </ul>
+                    <ul class="footer__nav">
+                        <!-- <li class="footer__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Подарочные сертификаты
+                            </a>
+                        </li> -->
+                        <!-- <li class="footer__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Доставка и возврат
+                            </a>
+                        </li> -->
+                        <!-- <li class="footer__nav-item">
+                            <a href="#" class="header__nav-link">
+                                Акции
+                            </a>
+                        </li> -->
+                    </ul>
+                    <ul class="footer__nav">
+                        <li class="footer__nav-item">
+                            <a href="https://t.me/volikova_katya" target = "_blank" class="header__nav-link footer__link-social">
+                                Telegram
+                            </a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="mailto: 11111@gmail.com" class="header__nav-link footer__link-social">
+                                vyazan@gmail.com
+                            </a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="tel: 8111111" class="header__nav-link footer__link-social">
+                                +79889780556
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__elem">
+                    <p class="header__nav-link">
+                        Новости, скидки и акции для подписчиков
+                        нашей рассылки:
+                    </p>
+                    <div class="footer__elem-wrapper">
+                        <form class="footer__elem-form">
+                            <input type="email" placeholder="e-mail" required class="footer__form-input">
+                            <button type="submit" class="footer__form-btn btn">
+                                Подтвердить
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <p class="footer__copiwriter">
+                © 2022 Vyazan
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

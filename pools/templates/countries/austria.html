@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Австрия</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<style>
+    body {
+    margin: 0;
+    background: #EEEEEE;
+    font-family: Arial;
+}
+
+header {
+    background: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a:hover {
+    background-color: #0096ff;
+    color: black;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    max-width: 90%;
+}
+
+main li {
+    line-height: 1.5;
+}
+
+main p {
+    line-height: 1.5;
+}
+
+main iframe {
+    width: 100%;
+}
+
+.video {
+    width: 1200px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#au_map {
+    transform: rotate(180deg) scaleX(-1);
+}
+
+.trans {
+    transform: rotate(180deg) scaleX(-1);
+}
+
+#au_first {
+    color: #0096ff;
+}
+
+.galery_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.gallery {
+    width: 240px;
+}
+
+.gallery_item {
+    margin-top: 10px;
+    border: 3px solid #333333;
+    border-radius: 5px;
+    float: left;
+    width: 240px;
+    background: #333333;
+}
+
+.gallery_item:hover {
+    border: 3px solid #0096ff;
+    transform: scale(1.3);
+}
+
+.gallery_item img {
+    width: 100%;
+    margin-top: 5px;
+    height: auto;
+}
+
+.gallery_item .desc {
+    padding: 15px;
+    text-align: center;
+    color: #0096ff;
+}
+
+.collage:hover {
+    transform: scale(1.2);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #c9c9c9;
+}
+
+table a {
+    color: black;
+}
+
+th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #0096ff;
+    color: white;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: 20px;
+    background: #333333;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/*Стили для отзыва*/
+.review_container {
+    padding: 16px;
+}
+
+.inner_padding_container {
+    padding: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Кастомный чекбокс */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #D8D8D8;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #636363;
+}
+
+/* Показать индикатор когда checked*/
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.container input:checked ~ .checkmark {
+    background-color: #333333;
+}
+
+/* Показать checkmark/indicator (будет скрыт когда не checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Показать checkmark когда checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+textarea, input[type=text], input[type=tel], input[type=date], input[type=time], input[type=email], input[type=range], select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0096ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+
+</style>
+
+<header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О авторе</a>
+        <a href="australia.html">Австралия</a>
+        <a href="austria.html">Австрия</a>
+        <a href="form.html">Отзыв</a>
+    </nav>
+</header>
+<body>
+<main>
+    <div class="row">
+        <div class="card">
+            <img src="img/Flag_of_Austria.png" height="80" width="160"/>
+            <h1>Австрия</h1>
+            <h2>Карта Австрии</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1950159.9591837216!2d16.161944464803902!3d48.04269364335418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1640886296369!5m2!1sru!2sru"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <p>Австрия — Австри́йская Республика (Republik Österreich) — государство в Центральной Европе. Население
+                составляет
+                8,92 млн
+                человек, территория — 83 879 км². Занимает 98-е место в мире по численности населения и 112-е по
+                территории.</p>
+            <p>Федеративное государство, парламентская республика. С 6 декабря 2021 года исполняющим обязанности
+                федерального
+                канцлера является Карл Нехаммер.</p>
+            <p>Подразделяется на 9 федеральных земель: Бургенланд, Каринтия, Нижняя Австрия, Верхняя Австрия, Зальцбург,
+                Тироль,
+                Штирия, Форарльберг, Вена.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card w-100">
+            <h2>Видео о Австрии</h2>
+            <iframe class="video" width="1280" height="640" src="https://www.youtube.com/embed/MprO4PCsKwg"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card w-70">
+            <h2>Столица</h2>
+            <p> Вена— федеральная столица Австрии и одновременно одна из девяти федеральных земель Австрии,
+                расположенная
+                внутри другой земли, Нижней Австрии. Расположена в восточной части страны. Население Вены составляет 1
+                867 582
+                чел. (1 января 2017); вместе с пригородами — около 2,6 млн (более 25 % населения Австрии); таким
+                образом,
+                Вена является самым крупным по населению городом Австрии, занимая десятое место среди самых крупных
+                городов
+                Европейского союза и второе место среди немецкоязычных городов после Берлина. Культурный, экономический
+                и
+                политический центр Австрии.
+            </p>
+        </div>
+        <div class="card w-30">
+            <h2>Гимн Австрии</h2>
+            <audio controls>
+                <source src="audio/austria.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает элемент аудио.
+            </audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card w-100">
+            <div>
+                <h2>Административно-территориальное деление</h2>
+                <table>
+                    <tr>
+                        <th>
+                            <p>№</p>
+                        </th>
+                        <th>
+                            <p>Название</p>
+                        </th>
+                        <th>
+                            <p>Население</p>
+                            <p>(2002 г.)</p>
+                        </th>
+                        <th>
+                            <p>Площадь</p>
+                            <p>(км&sup2;)</p>
+                        </th>
+                        <th>
+                            <p>Центр</p>
+                            <p>(население)</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>1</p>
+                        </td>
+                        <td>
+                            <p>Нижняя Австрия</p>
+                        </td>
+                        <td>
+                            <p>1555100</p>
+                        </td>
+                        <td>
+                            <p>19174</p>
+                        </td>
+                        <td>
+                            <p>Санкт-Пёльтен<br/> (49400)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>2</p>
+                        </td>
+                        <td>
+                            <p>Вена</p>
+                        </td>
+                        <td>
+                            <p>1543100</p>
+                        </td>
+                        <td>
+                            <p>415</p>
+                        </td>
+                        <td>
+                            <p>Вена<br/> (1543100)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>3</p>
+                        </td>
+                        <td>
+                            <p>Верхняя Австрия</p>
+                        </td>
+                        <td>
+                            <p>1384400</p>
+                        </td>
+                        <td>
+                            <p>11980</p>
+                        </td>
+                        <td>
+                            <p>Линц<br/> (185800)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>4</p>
+                        </td>
+                        <td>
+                            <p>Штирия</p>
+                        </td>
+                        <td>
+                            <p>1177300</p>
+                        </td>
+                        <td>
+                            <p>16388</p>
+                        </td>
+                        <td>
+                            <p>Грац<br/> (223000)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>5</p>
+                        </td>
+                        <td>
+                            <p>Тироль</p>
+                        </td>
+                        <td>
+                            <p>679400</p>
+                        </td>
+                        <td>
+                            <p>12648</p>
+                        </td>
+                        <td>
+                            <p>Инсбурк<br/> (114700)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>6</p>
+                        </td>
+                        <td>
+                            <p>Каринтия</p>
+                        </td>
+                        <td>
+                            <p>559600</p>
+                        </td>
+                        <td>
+                            <p>9533</p>
+                        </td>
+                        <td>
+                            <p>Клагенфурт<br/> (90100)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>7</p>
+                        </td>
+                        <td>
+                            <p>Зальцбург</p>
+                        </td>
+                        <td>
+                            <p>520300</p>
+                        </td>
+                        <td>
+                            <p>7154</p>
+                        </td>
+                        <td>
+                            <p>Зальцбург<br/> (145200)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>8</p>
+                        </td>
+                        <td>
+                            <p>Форарльберг</p>
+                        </td>
+                        <td>
+                            <p>353500</p>
+                        </td>
+                        <td>
+                            <p>2601</p>
+                        </td>
+                        <td>
+                            <p>Брегенц<br/> (27000)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>9</p>
+                        </td>
+                        <td>
+                            <p>Бургенланд</p>
+                        </td>
+                        <td>
+                            <p>279000</p>
+                        </td>
+                        <td>
+                            <p>3965</p>
+                        </td>
+                        <td>
+                            <p>Эйзенштадт<br/> (11300)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card w-70">
+            <h2>Коллаж</h2>
+            <img class="collage" src="img/290px-Collage_von_Wien.jpg" height="403" width="290">
+        </div>
+        <div class="card w-30">
+            <h2>Галерея изображений</h2>
+            <div class="galery_container">
+                <div class="gallery">
+                    <div class="gallery_item">
+                        <a target="_blank" href="img/gallery_austria/img1.jpg">
+                            <img class="zoom" src="img/gallery_austria/img1.jpg" alt="Вена" width="600" height="400">
+                        </a>
+                        <div class="desc">Вена</div>
+                    </div>
+
+                    <div class="gallery_item">
+                        <a target="_blank" href="img/gallery_austria/img2.jpg">
+                            <img src="img/gallery_austria/img2.jpg" alt="Озеро Нойзидлер" width="600" height="400">
+                        </a>
+                        <div class="desc">Озеро Нойзидлер</div>
+                    </div>
+
+                    <div class="gallery_item">
+                        <a target="_blank" href="img/gallery_austria/img3.jpg">
+                            <img src="img/gallery_austria/img3.jpg" alt="Зальцбург" width="600" height="400">
+                        </a>
+                        <div class="desc">Зальцбург</div>
+                    </div>
+
+                    <div class="gallery_item">
+                        <a target="_blank" href="img/gallery_austria/img4.jpg">
+                            <img src="img/gallery_austria/img4.jpg" alt="Водопады Кримль" width="600" height="400">
+                        </a>
+                        <div class="desc">Водопады Кримль</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    &copy;2022 Все права защищены
+</footer>
+</body>
+</html>
+
