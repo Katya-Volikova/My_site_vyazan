@@ -7,6 +7,7 @@ urlpatterns = [
     path('index.html/', index.index),
     path('index.html/about_us.html/', index.about_us),
     path('index.html/log_in.html', index.log_in),
+    path('index.html/sign_in.html', index.sign_in),
 #    path('/catalog/', index.catalog),
 
 

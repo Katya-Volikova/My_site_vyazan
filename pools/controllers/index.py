@@ -7,6 +7,8 @@ def about_us(request):
     return render(request, 'about_us.html', {})
 def log_in(request):
     return render(request, 'log_in.html', {})
+def sign_in(request):
+    return render(request, 'sign_in.html', {})
 
 # def index(request):
 #     return render(request, 'index2.html', {})

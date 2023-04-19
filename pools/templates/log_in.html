@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -11,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
     <link href="index.html">
+    <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
+    <link type="image/png" rel="icon" href="{% static 'pools/img/favicon.ico' %}">
 </head>
 
 <body>
@@ -21,69 +22,74 @@
         <div class="container">
             <nav class="header__nav">
                 <button class="header__nav-burger" id="burger">
-                    <img src="img.burger.svg" alt="menu">
+                    <img src="{% static 'pools/img.burger.svg' %}" alt="menu">
                 </button>
                 <div class="header__nav-wrapper header__nav-wrapper-mob">
                     <ul class="header__nav-list header__nav-left header__nav-list-mob">
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link" id="catalog">Каталог</a>
-
+                            <a href="../index.html#Сatalog" class="header__nav-link" id="catalog">Каталог</a>
                         </li>
-
-
-
                         <li class="header__nav-item">
-                            <a href="#CARE" class="header__nav-link">Уход</a>
+                            <a href="../index.html#CARE" class="header__nav-link">Уход</a>
 
                         </li>
                         <li class="header__nav-item">
-                            <a href="about_us.html" class="header__nav-link">Фабрика</a>
+                            <a href="../index.html/about_us.html" class="header__nav-link">Фабрика</a>
                         </li>
-                       <li class="header__nav-item">
-                           <a href="index.html" class="header__nav-link">Главная</a>
-                    </li>
+
                     </ul>
                     <div class="header__nav-logo">
-                        <img src="img/logo.svg" alt="Вязань" class="img-logo">
+                        <img src="{% static 'pools/img/logo.svg' %}" alt="Вязань" class="img-logo">
                     </div>
                     <ul class="header__nav-list header__nav-right header__nav-list-mob">
                         <li class="header__nav-item">
-                            <a href="#contacts" class="header__nav-link">Контакты</a>
-                        </li>
-
+                           <a href="../../index.html" class="header__nav-link">Главная</a>
+                    </li>
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">Войти</a>
+                            <a href="#contacts" class="header__nav-link">Контакты</a>
                         </li>
                         <li class="header__nav-item">
                             <a href="#" class="header__nav-link">
-                                <img src="img/icons/cart.svg" alt="cart" class="icon-cart">
+                                 <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" class="icon-cart">
                             </a>
                         </li>
                     </ul>
                 </div>
                 <button class="header__nav-cart header__nav-burger">
-                    <img src="./img/icons/cart.svg" alt="cart">
+                    <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart">
                 </button>
             </nav>
         </div>
     </header>
 
     <section class="banner_log">
-        <div class="container">
+        <div class="container_log">
             <div class="banner__wrapper_log">
-                <p class="banner__content_log">
-                    Стань частью большой семьи Вязань
-                </p>
+
+                <p class="banner__content_log"> Стань частью большой</p>
+
+                <p class="banner__content_log_2"> семьи Вязань </p>
+
+
+
                 <div class="banner__wrapper_email_log">
-                <p class="banner__content_email_log">
-                    e-mail
-                </p>
-            </div>
-                <p class="banner__content_password_log">
-                    password
-                </p>
+                    <p class="banner__content_email_log">
+                        <input type="email" placeholder="e-mail" required class="footer__form-input form-input">
+                    </p>
+                </div>
 
+                <div class="banner__wrapper_password_log">
+                    <p class="banner__content_password_log">
+                        <input type="password" placeholder="password" required class="footer__form-input form-input">
+                    </p>
+                </div>
 
+                <button class="banner__content_button_log">Вход</button>
+
+                <div class="banner__wrapper_forget_log">
+                    <p class="banner__content_forget_log"> Забыли пароль? </p>
+                    <a href="../../index.html/sign_in.html" class="banner__content_sign_log"> Зарегистрироваться</a>
+                </div>
 
             </div>
         </div>
@@ -96,39 +102,17 @@
                 <div class="footer__wrapper-nav">
                     <ul class="footer__nav">
                         <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
+                            <a href="../index.html#Catalog" class="header__nav-link">
                                 Каталог
                             </a>
                         </li>
                         <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
+                            <a href="../index.html/about_us.html" class="header__nav-link">
                                 Фабрика
                             </a>
                         </li>
                         <li class="footer__nav-item">
-                            <a href="#CARE" class="header__nav-link">Уход</a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Опт
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="footer__nav">
-                        <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Подарочные сертификаты
-                            </a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Доставка и возврат
-                            </a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Акции
-                            </a>
+                            <a href="../index.html#CARE" class="header__nav-link">Уход</a>
                         </li>
                     </ul>
                     <ul class="footer__nav">
@@ -169,7 +153,5 @@
             </p>
         </div>
     </footer>
-
 </body>
-
 </html>
