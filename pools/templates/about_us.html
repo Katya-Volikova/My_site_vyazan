@@ -1,66 +1,6 @@
+{% extends 'temp.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вязань</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;900&display=swap" rel="stylesheet">
-    <link href="index.html">
-    <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
-    <link type="image/png" rel="icon" href="{% static 'pools/img/favicon.ico' %}">
-</head>
-
-<body>
-    <header class="header">
-        <div class="container">
-            <nav class="header__nav">
-                <button class="header__nav-burger" id="burger">
-                    <img src="{% static 'pools/img.burger.svg' %}" alt="menu">
-                </button>
-                <div class="header__nav-wrapper header__nav-wrapper-mob">
-                    <ul class="header__nav-list header__nav-left header__nav-list-mob">
-                        <li class="header__nav-item">
-                            <a href="../#Catalog" class="header__nav-link" id="catalog">Каталог</a>
-
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="../#CARE" class="header__nav-link">Уход</a>
-
-                        </li>
-                       <li class="header__nav-item">
-                           <a href="../../index.html" class="header__nav-link">Главная</a>
-                    </li>
-                    </ul>
-                    <div class="header__nav-logo">
-                        <img src="{% static 'pools/img/logo.svg' %}" alt="Вязань" class="img-logo">
-                    </div>
-                    <ul class="header__nav-list header__nav-right header__nav-list-mob">
-                        <li class="header__nav-item">
-                            <a href="#contacts" class="header__nav-link">Контакты</a>
-                        </li>
-
-                        <li class="header__nav-item">
-                            <a href="../log_in.html" class="header__nav-link">Войти</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="../index.html/basket.html" class="header__nav-link">
-                                <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" class="icon-cart">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <button class="header__nav-cart header__nav-burger">
-                    <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart">
-                </button>
-            </nav>
-        </div>
+{%block body%}
         <div class="mainScreen_fabric">
             <div class="container">
                 <div class="mainScreen__wrapper_fabric">
@@ -69,16 +9,14 @@
                         <p class="mainScreen__text-descr_fabric">
                             Швейное производство «Вязань» открылось в 2017 году. Уже 5 лет
                             мы занимаемся пошивом женской, мужской и детской одежды. Наши конструкторы создают эффектные образы вне трендов. На свидании
-                            или в офисе, в кино или на прогулке, в путешествии или во время важной презентации — в Вязани вы чувствуете себя комфортно и уверенно всегда. 
+                            или в офисе, в кино или на прогулке, в путешествии или во время важной презентации — в Вязани вы чувствуете себя комфортно и уверенно всегда.
                         </p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-    </header>
- 
-                    </a>
+
     <section class="sertificate">
         <div class="container">
             <div class="sertificate__wrapper">
@@ -134,84 +72,4 @@
     </section>
 
     <a name="contacts"></a>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__wrapper-nav">
-                    <ul class="footer__nav">
-                        <li class="footer__nav-item">
-                            <a href="../#Catalog" class="header__nav-link">
-                                Каталог
-                            </a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="../../index.html" class="header__nav-link">Главная</a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="../#CARE" class="header__nav-link">Уход</a>
-                        </li>
-                        <!-- <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Опт
-                            </a>
-                        </li> -->
-                    </ul>
-                    <ul class="footer__nav">
-                        <!-- <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Подарочные сертификаты
-                            </a>
-                        </li> -->
-                        <!-- <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Доставка и возврат
-                            </a>
-                        </li> -->
-                        <!-- <li class="footer__nav-item">
-                            <a href="#" class="header__nav-link">
-                                Акции
-                            </a>
-                        </li> -->
-                    </ul>
-                    <ul class="footer__nav">
-                        <li class="footer__nav-item">
-                            <a href="https://t.me/volikova_katya" target = "_blank" class="header__nav-link footer__link-social">
-                                Telegram
-                            </a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="mailto: 11111@gmail.com" class="header__nav-link footer__link-social">
-                                vyazan@gmail.com
-                            </a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="tel: 8111111" class="header__nav-link footer__link-social">
-                                +79889780556
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__elem">
-                    <p class="header__nav-link">
-                        Новости, скидки и акции для подписчиков
-                        нашей рассылки:
-                    </p>
-                    <div class="footer__elem-wrapper">
-                        <form class="footer__elem-form">
-                            <input type="email" placeholder="e-mail" required class="footer__form-input">
-                            <button type="submit" class="footer__form-btn btn">
-                                Подтвердить
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <p class="footer__copiwriter">
-                © 2022 Vyazan
-            </p>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+    {%endblock%}
