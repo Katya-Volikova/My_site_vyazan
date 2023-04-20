@@ -8,6 +8,8 @@ urlpatterns = [
     path('index.html/about_us.html/', index.about_us),
     path('index.html/log_in.html', index.log_in),
     path('index.html/sign_in.html', index.sign_in),
+    path('index.html/forget.html', index.forget),
+    path('index.html/basket.html', index.basket),
 #    path('/catalog/', index.catalog),
 
 

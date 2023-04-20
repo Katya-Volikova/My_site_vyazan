@@ -9,6 +9,10 @@ def log_in(request):
     return render(request, 'log_in.html', {})
 def sign_in(request):
     return render(request, 'sign_in.html', {})
+def forget(request):
+    return render(request, 'forget.html', {})
+def basket(request):
+    return render(request, 'basket.html', {})
 
 # def index(request):
 #     return render(request, 'index2.html', {})
