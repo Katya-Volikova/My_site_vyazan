@@ -1,0 +1,44 @@
+{% extends 'temp.html' %}
+{% load static %}
+{% block body %}
+    <section class="basket_list">
+        <div class="container">
+            <h2 class="catalog__heading heading heading_basket catalog__heading_basket">
+                Покупки:
+            </h2>
+
+                 <div class="construct__wrapper-text_basket">
+                     <img src="{% static 'pools/img/cards1/1.png' %}" alt="card" class="card-img_basket">
+                    <div class = "text_basket">
+                        <div class = "left_basket">
+                <p class="wrapper-text__content_basket">
+                   Свитер свободного кроя крупной вязки
+                </p>
+                     <p class="wrapper-text__content_basket_2">
+                   Размер: единый
+                </p>
+                     <p class="wrapper-text__content_basket_3">
+                    Цвет: синий
+                </p>
+                        <div class="plas-menos">
+                         <button class = "menos_basket" data-id="blue_switer">-</button>
+                         <p class = "amount_basket" id="count">1</p>
+                         <button class = "plas_basket" data-id="blue_switer">+</button>
+                     </div>
+                </div>
+</div>
+                        <div class="right_basket">
+                            <div class = "cancel_basket">
+                            <p class = "cancel">✕</p>
+                        </div>
+                <div class = "pay_basket">
+                    <p class = "coast">3745₽</p>
+                </div>
+
+                        </div>
+            </div>
+        </div>
+
+    </section>
+    <a name="contacts"></a>
+ {% endblock %}
