@@ -50,7 +50,42 @@
                         </li>
 
                         <li class="header__nav-item">
-                            <a href="../log_in.html" class="header__nav-link">Войти</a>
+                            <a   class="header__nav-link" onclick="openForm()">Войти</a>
+
+<!--href="../log_in.html" -->
+
+                             <!--<div class="openBtn">
+      <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
+    </div>-->
+    <div class="loginPopup">
+      <div class="formPopup" id="popupForm">
+        <form  class="banner__wrapper_log">
+          <p class="banner__content_log"> Стань частью большой</p>
+            <p class="banner__content_log_2"> семьи Вязань </p>
+          <div class="banner__wrapper_email_log">
+                    <p class="banner__content_email_log">
+                        <input type="email" placeholder="e-mail" required class="footer__form-input form-input">
+                    </p>
+                </div>
+          <div class="banner__wrapper_password_log">
+                    <p class="banner__content_password_log">
+                        <input type="password" placeholder="password" required class="footer__form-input form-input">
+                    </p>
+                </div>
+          <button class="banner__content_button_log">Вход</button>
+
+                <div class="banner__wrapper_forget_log">
+                    <a href="../forget.html" class="banner__content_forget_log"> Забыли пароль?</a>
+                    <a href="../sign_in.html" class="banner__content_sign_log"> Зарегистрироваться</a>
+                    <button type="button" class="cancel_button" onclick="closePopup()">Закрыть окно входа</button>
+                </div>
+
+        </form>
+      </div>
+    </div>
+
+
+
                         </li>
                         <li class="header__nav-item">
                             <a href="../basket.html" class="header__nav-link">

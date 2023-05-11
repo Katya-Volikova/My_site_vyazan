@@ -23,6 +23,115 @@ body {
     line-height: 29px;
     color: #131212;
 }
+.mainpopup{
+    background-color: #D9D9D9;
+
+}
+
+.topBlock{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelX{
+    border: none;
+    color: #CDCFCF;
+    background-color: white;
+    max-width: 30px;
+    max-height: 30px;
+    height: 100%;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.PictureItem{
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 500;
+    color: #B0BCD2;
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.cardpopup{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    border: 3px solid;
+    border-color: #D9D9D9;
+    padding-left: 15px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    background-color: white;
+}
+.rightside{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.Name{
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 600;
+    color: #1A1B1C;
+    text-align: left;
+    margin-bottom: 17px;
+}
+.price{
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 500;
+    color: #B0BCD2;
+    text-align: left;
+}
+
+.caracteristics{
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.popupimg{
+    max-height: 475px;
+    height: 100%;
+}
+
+.descriptionitem{
+    text-align: left;
+    font-family: "Inter";
+    font-size: 15px;
+}
+.item_caracteristic{
+    display: flex;
+    justify-content: start;
+    text-align: left;
+    font-family: "Inter";
+    font-size: 15px;
+}
+.objectcaracteristic{
+    margin-left: 15px;
+}
+.button_item{
+    padding: 7px 98px 7px 98px;
+    background-color: #B0BCD2;
+    border: none;
+
+}
+.button_item_text{
+     text-align: center;
+    font-family: "Inter";
+    color: white;
+    font-size: 30px;
+    background-color: #B0BCD2;
+
+
+}
+.namecaracteristic{
+    font-weight: 500;
+}
+
+
+
+
 .container {
     max-width: 940px;
     width: 100%;
@@ -276,6 +385,97 @@ body {
     margin-left: 175px;
 }
 
+
+
+
+      *  {
+        box-sizing: border-box;
+      }
+      .openBtn {
+        display: flex;
+        justify-content: left;
+      }
+      .openButton {
+        border: none;
+        border-radius: 5px;
+        background-color: #1c87c9;
+        color: white;
+        padding: 14px 20px;
+        cursor: pointer;
+        position: fixed;
+      }
+      .loginPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      .formPopup {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-38%, 5%);
+        z-index: 9;
+      }
+      .formPopup2 {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-41.05%, 5%);
+        z-index: 9;
+      }
+      .formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      .formContainer input[type=text],
+      .formContainer input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+      }
+      .formContainer input[type=text]:focus,
+      .formContainer input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+      .formContainer .cancel {
+        background-color: #cc0000;
+      }
+      .formContainer .btn:hover,
+      .openButton:hover {
+        opacity: 1;
+      }
+      .cancel_button{
+          font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: center;
+            color: rgba(246, 254, 255, 1);
+            margin: 0 auto;
+              border: none;
+              background-color: #A4BDCD;
+      }
+
+
+
+
 .banner__content_button_log{
     font-family: 'Inter';
     font-style: normal;
@@ -345,10 +545,12 @@ padding-top: 45px;
 border-radius: 93px;
 }
 
+
+
 .banner__wrapper_log {
 width: 450px;
-height: 480px;
-background: rgba(29, 64, 127, 0.35);
+height: 500px;
+background: #A4BDCD;
 margin-top: 7px;
 margin-left: 75px;
 margin-right: 75px;
@@ -407,12 +609,14 @@ color: #F6FEFF;
 .banner__content_email_log {
     font-family: 'Inter';
     font-style: light;
+    width: 200px;
     font-size: 15px;
     Line-height: 42px;
     color: #BCB8B8;
 }
 .banner__content_password_log {
     font-family: 'Inter';
+    width: 200px;
     font-style: light;
     font-size: 15px;
     Line-height: 42px;
@@ -813,6 +1017,11 @@ color: red;
         background: none;
         border: none;
     }
+
+
+
+
+
     .catalog__wrapper {
         margin-top: 13px;
         grid-template-columns: repeat(6, 1fr);
