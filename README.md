@@ -9,7 +9,7 @@
 
 
 
-![vyazan](pools\static\pools\img\Group 1.png)
+![vyazan](pools/static/pools/img/Group 1.png)
 
 
 ## Наше первое пространство
@@ -21,11 +21,11 @@
 При оформлении интерьера мы вдохновлялись философией Slow living. В ее основе лежат экологичность, осознанный выбор материалов, идея «медленной жизни» и наслаждения настоящим. Поэтому особое внимание мы уделили эмоциям, которые можно получить от визуальных или тактильных деталей пространства.
 
 
-| ![vyazan](pools\static\pools\img\item6.jpg) | ![vyazan](pools\static\pools\img\item7.jpg) |
+| ![vyazan](pools/static/pools/img/item6.jpg) | ![vyazan](pools/static/pools/img/item7.jpg) |
 |-----------------------------------------------|-----------------------------------------------|
-| ![vyazan](pools\static\pools\img\item8.jpg) | ![vyazan](pools\static\pools\img\item4.jpg) |
+| ![vyazan](pools/static/pools/img/item8.jpg) | ![vyazan](pools/static/pools/img/item4.jpg) |
 
-![vyazan](pools\static\pools\img\12345.jpg)
+![vyazan](pools/static/pools/img/12345.jpg)
 ### ТРЦ Волгамол г.Волжский
 
 - ул.Мира, 26, Волжский, 234691
