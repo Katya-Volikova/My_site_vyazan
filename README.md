@@ -9,7 +9,7 @@
 
 
 
-![vyazan](pools/static/pools/img/Group 1.png)
+![vyazan](pools/static/pools/img/Group_1.png)
 
 
 ## Наше первое пространство
