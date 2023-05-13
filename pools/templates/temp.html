@@ -83,19 +83,33 @@
         </form>
       </div>
     </div>
-
-
-
                         </li>
                         <li class="header__nav-item">
-                            <a href="../basket.html" class="header__nav-link">
-                                 <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" class="icon-cart">
+                            <!--<a href="../basket.html" class="header__nav-link" onclick="showCart()">-->
+                            <a>
+                                 <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" class="icon-cart" onclick="openPopupCart()">
+
+                                <div class="formPopup2 cart_param" id="popupCart">
+                                    <div class="cardpopup">
+                                        <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+                                        <div class="container">
+                                            <h2 class="catalog__heading heading heading_basket catalog__heading_basket">
+                                                Покупки:
+                                            </h2>
+                                            <div id="cartItems">
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                     </div>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <button class="header__nav-cart header__nav-burger">
-                     <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart">
+                     <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" >
+
                 </button>
             </nav>
         </div>
@@ -166,5 +180,6 @@
             </p>
         </div>
     </footer>
-<script src="{% static 'pools/js_files/basket.js' %}"></script>
+<script src="{% static 'pools/js_files/popups.js' %}"></script>
+<script src="{% static 'pools/js_files/shop_cart.js' %}"></script>
 </html>

@@ -11,7 +11,7 @@
                             Осень с Вязанью
                         </h1>
                          <img src="{% static 'pools/img/heading.png' %}"alt="Холода близко" class="mainScreen__text-heading heading-img">
-                        <p class="mainScreen__text-descr">
+                        <p class="mainScreen__text-descr" id="cart" onclick="showCart()">
                             Новая коллекция удобная, лакончиная
                             и стильная. Мы позаботились о том,
                             чтобы вы ощущали свободу, расслабленность и комфорт в каждом движении. Более того, наши
@@ -22,13 +22,16 @@
                     </div>
                     <div class="mainScreen__products">
                         <a name="news" ></a>
-                        <a href="#" class="mainScreen__products-item">
-                            <p class="products-item__name">
+                        <a class="mainScreen__products-item">
+                            <p class="products-item__name" >
                                 Шарф
+
+
                             </p>
                             <p class="products-item__price">
                                 1435₽
                             </p>
+
                         </a>
                         <a href="#" class="mainScreen__products-item">
                             <p class="products-item__name">
@@ -39,7 +42,48 @@
                             </p>
                         </a>
                     </div>
-                      <img src="{% static 'pools/img/header.png' %}" alt="model" class="mainScreen__pic-img"/>
+                      <img src="{% static 'pools/img/header.png' %}" alt="model" class="mainScreen__pic-img" onclick="openPopup22()">
+                        <div class="formPopup2" id="popupFormMain22">
+                                                                      <div class="cardpopup">
+                                        <div class="imgcard">
+                                            <img src="{% static 'pools/img/cards1/scaf.jpg' %}"  alt="card" class="card-img popupimg">
+                                        </div>
+                                        <div class="rightside">
+                                        <div class="topBlock">
+                                            <div class="namecard">
+                                                <p class="Name" >Шарф</p>
+                                                <p class="price">1435₽</p>
+                                            </div>
+                                                <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+                                        </div>
+                                            <div class="caracteristics">
+                                                <div class="item_caracteristic">
+                                                    <p class="namecaracteristic">Цвет:</p>
+                                                    <p class="objectcaracteristic">Белый</p>
+                                                </div>
+                                                <div class="item_caracteristic">
+                                                    <p class="namecaracteristic">Размер:</p>
+                                                    <p class="objectcaracteristic">Единый</p>
+                                                </div>
+                                                <div class="item_caracteristic">
+                                                    <p class="namecaracteristic">Состав:</p>
+                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
+                                                </div>
+                                                <div class="descriptionitem">
+                                                    <p class="namecaracteristic">Описание:</p>
+                                                    <p>Английская резинка</p>
+                                                    <p>Крупная вязка 3 класса</p>
+                                                    <p>Легкий и воздушный</p>
+                                                </div>
+                                            </div>
+                                            <button class="button_item">
+                                                <p class="button_item_text">Добавить в корзину</p>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                              </div>
                 </div>
             </div>
         </div>
@@ -47,7 +91,7 @@
     <section class="catalog">
         <div class="container">
             <a name = "Catalog"></a>
-            <h2 class="catalog__heading heading">
+            <h2 class="catalog__heading heading" id="rofl">
                 Для нее
             </h2>
 
@@ -92,8 +136,9 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
-                                                <p class="button_item_text">Добавить в корзину</p>
+                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, 'lol')">
+                                                <p class="button_item_text" >Добавить в корзину</p>
+
                                             </button>
                                         </div>
 
@@ -159,7 +204,7 @@
                                                 </div>
                                             </div>
                                             <button class="button_item">
-                                                <p class="button_item_text">Добавить в корзину</p>
+                                                <p class="button_item_text" onclick="addToCart('Шапка-бини крупной вязки', 1155, 'lol')">Добавить в корзину</p>
                                             </button>
                                         </div>
 

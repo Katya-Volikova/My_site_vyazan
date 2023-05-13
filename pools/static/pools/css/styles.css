@@ -44,6 +44,9 @@ body {
     padding-right: 30px;
 }
 
+.cancelX:hover {
+  transform: scale(1.5);
+}
 .PictureItem{
     font-family: "Inter";
     font-size: 30px;
@@ -87,7 +90,6 @@ body {
 
 .caracteristics{
     padding-top: 30px;
-    padding-bottom: 60px;
 }
 
 .popupimg{
@@ -114,6 +116,8 @@ body {
     padding: 7px 98px 7px 98px;
     background-color: #B0BCD2;
     border: none;
+    /*margin-top: 57px;*/
+
 
 }
 .button_item_text{
@@ -388,9 +392,6 @@ body {
 
 
 
-      *  {
-        box-sizing: border-box;
-      }
       .openBtn {
         display: flex;
         justify-content: left;
@@ -425,6 +426,19 @@ body {
         transform: translate(-41.05%, 5%);
         z-index: 9;
       }
+
+      .cart_param{
+          width:1000px;
+          height:1000px;
+
+      }
+
+
+
+
+
+
+
       .formContainer {
         max-width: 300px;
         padding: 20px;
