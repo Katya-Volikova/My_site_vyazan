@@ -90,7 +90,8 @@ function openForm() {
         flag = 1;
       }
       function openPopup21() {
-        if(flag == 0) document.getElementById("popupFormMain21").style.display = "block";
+        /*if(flag == 0) document.getElementById("popupFormMain21").style.display = "block";*/
+        if(flag == 0) document.getElementById("popupFormMain21").classList.add("visible");
         flag = 1;
       }
       function openPopup22() {
@@ -101,7 +102,12 @@ function openForm() {
         if(flag == 0) document.getElementById("popupCart").style.display = "block";
         flag = 1;
         showCart();
-}
+        }
+
+        function popupabout() {
+            if(flag == 0) document.getElementById("popupabout").classList.add("visible");
+            flag = 1;
+        }
 
 
       function closePopup() {
@@ -125,14 +131,27 @@ function openForm() {
         document.getElementById("popupFormMain18").style.display = "none";
         document.getElementById("popupFormMain19").style.display = "none";
         document.getElementById("popupFormMain20").style.display = "none";
-        document.getElementById("popupFormMain21").style.display = "none";
+        /*document.getElementById("popupFormMain21").style.display = "none";*/
         document.getElementById("popupFormMain22").style.display = "none";
         document.getElementById("popupCart").style.display = "none";
         document.getElementById("popupForm").style.display = "none";
+        /*document.getElementById("popupabout").style.display = "none";*/
+
+
+        /*document.getElementById("popupabout").classList.remove("visible");*/
+
         flag = 0;
       }
 
+ function closePopup_ser() {
+    document.getElementById("popupFormMain21").classList.remove("visible");
+    flag = 0;
+ }
 
+ function closePopup_ser2() {
+    document.getElementById("popupabout").classList.remove("visible");
+    flag = 0;
+ }
 
 
 /*let cart = {

@@ -22,7 +22,7 @@
                     </div>
                     <div class="mainScreen__products">
                         <a name="news" ></a>
-                        <a class="mainScreen__products-item">
+                        <a class="mainScreen__products-item" onclick="addToCart('Шарф', 1435, 'lol')">
                             <p class="products-item__name" >
                                 Шарф
 
@@ -33,7 +33,7 @@
                             </p>
 
                         </a>
-                        <a href="#" class="mainScreen__products-item">
+                        <a href="#" class="mainScreen__products-item" onclick="addToCart('Шапка-бини крупной вязки', 1155, 'lol')">
                             <p class="products-item__name">
                                 Шапка-бини крупной вязки
                             </p>
@@ -76,7 +76,7 @@
                                                     <p>Легкий и воздушный</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Шарф', 1435, 'static \'pools/img/cards1/scaf.jpg\'')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -136,7 +136,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, 'lol')">
+                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, `lol`)">
                                                 <p class="button_item_text" >Добавить в корзину</p>
 
                                             </button>
@@ -150,7 +150,7 @@
 
 
 
-                        <div class = "one_pict">
+                        <div class = "one_pict" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, `lol`)">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -212,7 +212,7 @@
 
                               </div>
 
-                    <div class = "one_pict" id="one_pict1">
+                    <div class = "one_pict" id="one_pict1" onclick="addToCart('Шапка-бини крупной вязки', 1155, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                     </div>
                 </div>
@@ -230,8 +230,8 @@
                      <img src="{% static 'pools/img/cards1/3.png' %}" alt="card" class="card-img" onclick="openPopup3()">
                     <div class="formPopup2" id="popupFormMain3">
                         <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/3.png' %}"  alt="card" class="card-img popupimg">
+                            <div class="imgcard">
+                                <img src="{% static 'pools/img/cards1/3.png' %}"  alt="card" class="card-img popupimg">
                                         </div>
                                         <div class="rightside">
                                         <div class="topBlock">
@@ -263,7 +263,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -310,7 +310,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя в полоску', 4356, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -318,7 +318,7 @@
                                     </div>
 
                               </div>
-                        <div class = "one_pict">
+                        <div class = "one_pict" onclick="addToCart('Свитер свободного кроя в полоску', 4356, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -373,7 +373,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Кроп-свитер крупной вязки с аранами', 4165, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -381,7 +381,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Кроп-свитер крупной вязки с аранами', 4165, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -433,7 +433,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Кроп-кардиган с косами крупной вязки', 3465, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -441,7 +441,7 @@
                                     </div>
 
                               </div>
-                        <div class = "one_pict">
+                        <div class = "one_pict" onclick="addToCart('Кроп-кардиган с косами крупной вязки', 3465, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -485,7 +485,6 @@
                     </a>
                     <button class="sertificate__content-btn btn" onclick="openPopup21()">
                         Сертификаты
-
                     </button>
                     <div class="formPopup2" id="popupFormMain21">
                                   <div class="cardpopup">
@@ -493,7 +492,7 @@
                                         <div class="imgcard">
                                             <img src="{% static 'pools/img/cards1/certificate.jpg' %}"  alt="card" class="card-img popupimg">
                                         </div>
- <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+ <button type="button" class="cancelX" onclick="closePopup_ser()">✕</button>
                                     </div>
 
                               </div>
@@ -546,7 +545,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер с воротником-стойкой', 3499, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -594,7 +593,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер с воротником-стойкой', 3499, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -603,7 +602,7 @@
 
                               </div>
 
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Свитер с воротником-стойкой', 3499, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -654,7 +653,7 @@
                                                     <p>Объёмная посадка</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Шапка в рубчик', 1155, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -662,7 +661,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Шапка в рубчик', 1155, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -715,7 +714,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Жаккардовый свитер с узором', 3999, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -723,7 +722,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Жаккардовый свитер с узором', 3999, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -775,7 +774,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Жилет с деталями из кружева кроше', 3045, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -783,7 +782,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Жилет с деталями из кружева кроше', 3045, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -835,7 +834,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер с воротником на молнии', 4599, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -843,7 +842,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Свитер с воротником на молнии', 4599, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -938,7 +937,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер поло', 1380, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -946,7 +945,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Свитер поло', 1380, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -997,7 +996,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Костюм', 1970, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1005,7 +1004,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Костюм', 1970, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -1056,7 +1055,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Толстовка', 1400, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1064,7 +1063,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Толстовка', 1400, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -1116,7 +1115,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер', 1860, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1124,7 +1123,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Свитер', 1860, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -1175,7 +1174,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Джемпер', 1580, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1183,7 +1182,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Джемпер', 1580, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -1234,7 +1233,7 @@
                                                     <p>Приятный к телу</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Свитер', 980, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1242,7 +1241,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Свитер', 980, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -1328,7 +1327,7 @@
                                                     <p>Вес: 20 г</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Щетка для удаления катышек', 499, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1336,7 +1335,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Щетка для удаления катышек', 499, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -1367,10 +1366,6 @@
                                             <button type="button" class="cancelX" onclick="closePopup()">✕</button>
                                                 </div>
                                             <div class="caracteristics">
-                                                <!--<div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Бежевый</p>
-                                                </div>-->
                                                 <div class="item_caracteristic">
                                                     <p class="namecaracteristic">Объем:</p>
                                                     <p class="objectcaracteristic">0,75л</p>
@@ -1387,7 +1382,7 @@
                                                     <p>Хватит на 25 стирок!</p>
                                                 </div>
                                             </div>
-                                            <button class="button_item">
+                                            <button class="button_item" onclick="addToCart('Гель для стирки вещей', 760, 'lol')">
                                                 <p class="button_item_text">Добавить в корзину</p>
                                             </button>
                                         </div>
@@ -1395,7 +1390,7 @@
                                     </div>
 
                               </div>
-                    <div class = "one_pict">
+                    <div class = "one_pict" onclick="addToCart('Гель для стирки вещей', 760, 'lol')">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>

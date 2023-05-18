@@ -30,9 +30,18 @@
                     <a href="#" class="sertificate__content-link">
                         <img src="{% static 'pools/img/icons/Woolmark.svg' %}" alt="Woolmark" class="Woolmark-icon">
                     </a>
-                    <button class="sertificate__content-btn btn">
+                    <button class="sertificate__content-btn btn" onclick="popupabout()">
                         Сертификаты
                     </button>
+                    <div class="formPopup2" id="popupabout">
+                                  <div class="cardpopup">
+                                      <div class="imgcard">
+                                            <img src="{% static 'pools/img/cards1/certificate.jpg' %}"  alt="card" class="card-img popupimg">
+                                      </div>
+                                      <button type="button" class="cancelX" onclick="closePopup_ser2()">✕</button>
+                                  </div>
+
+                    </div>
                 </div>
             </div>
         </div>

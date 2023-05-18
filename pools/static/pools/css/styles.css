@@ -44,6 +44,26 @@ body {
     padding-right: 30px;
 }
 
+.head_cart{
+    display: flex;
+    justify-content: space-between;
+    width: 950px;
+    height: 80px;
+}
+
+
+
+.cancelXcart{
+    border: none;
+    color: #CDCFCF;
+    background-color: white;
+    max-width: 30px;
+    max-height: 30px;
+    height: 100%;
+    width: 100%;
+    padding-right: 30px;
+}
+
 .cancelX:hover {
   transform: scale(1.5);
 }
@@ -1244,4 +1264,8 @@ color: red;
         position: absolute;
         top: 50%;
     }
+}
+
+.visible {
+    display: block;
 }
