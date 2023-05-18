@@ -81,6 +81,8 @@ body {
     display: flex;
     justify-content: space-between;
     color: black;
+    overflow-y: scroll;
+    height: 500px;
     border: 3px solid;
     border-color: #D9D9D9;
     padding-left: 15px;
@@ -449,8 +451,6 @@ body {
 
       .cart_param{
           width:1000px;
-          height:1000px;
-
       }
 
 
@@ -944,6 +944,7 @@ color: red;
     justify-content: space-between;
     margin-top: 20px;
 }
+
 .footer__form-input {
     outline: none;
     border: none;
@@ -952,6 +953,8 @@ color: red;
     width: 100%;
     font-size: 15px;
 }
+
+
 .form-input{
     border-bottom: none;
 }
@@ -972,7 +975,10 @@ color: red;
         width: 100%;
 }
 
-
+.formFeedback{
+    max-height: 100px;
+    height: 100%;
+}
 @media (max-width: 950px) {
     .container {
         padding: 0 10px;

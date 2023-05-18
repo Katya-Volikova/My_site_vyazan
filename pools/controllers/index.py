@@ -14,9 +14,3 @@ def forget(request):
 def basket(request):
     return render(request, 'basket.html', {})
 
-# def index(request):
-#     return render(request, 'index2.html', {})
-# def about(request):
-#     return render(request, 'about2.html', {})
-# def care(request):
-#     return render(request, 'care.html', {})

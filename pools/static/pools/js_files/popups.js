@@ -9,6 +9,12 @@ function openForm() {
     flag = 1;
   }
 }
+function openFormFeedback() {
+  if(flag == 0){
+    document.getElementById("popupFormFeedback").style.display = "block";
+    flag = 1;
+  }
+}
       function openPopup() {
         if(flag == 0) document.getElementById("popupFormMain").style.display = "block";
         flag = 1;
@@ -131,15 +137,10 @@ function openForm() {
         document.getElementById("popupFormMain18").style.display = "none";
         document.getElementById("popupFormMain19").style.display = "none";
         document.getElementById("popupFormMain20").style.display = "none";
-        /*document.getElementById("popupFormMain21").style.display = "none";*/
         document.getElementById("popupFormMain22").style.display = "none";
         document.getElementById("popupCart").style.display = "none";
         document.getElementById("popupForm").style.display = "none";
-        /*document.getElementById("popupabout").style.display = "none";*/
-
-
-        /*document.getElementById("popupabout").classList.remove("visible");*/
-
+        document.getElementById("popupFormFeedback").style.display = "none";
         flag = 0;
       }
 

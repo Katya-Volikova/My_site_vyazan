@@ -23,12 +23,11 @@ function addToCart(product, price, image) {
     all_cost+=cart[itemIndex].price;
   }
 
-
-
-
   console.log(`Товар ${product} добавлен в корзину`);
 
 }
+
+
 
 function showCart() {
   const cartElement = document.getElementById('cartItems');

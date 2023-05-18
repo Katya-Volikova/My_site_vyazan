@@ -52,11 +52,6 @@
                         <li class="header__nav-item">
                             <a   class="header__nav-link" onclick="openForm()">Войти</a>
 
-<!--href="../log_in.html" -->
-
-                             <!--<div class="openBtn">
-      <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
-    </div>-->
     <div class="loginPopup">
       <div class="formPopup" id="popupForm">
         <form  class="banner__wrapper_log">
@@ -88,7 +83,7 @@
                             <a>
                                  <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" class="icon-cart" onclick="openPopupCart()">
 
-                                <div class="formPopup2 cart_param" id="popupCart">
+                                <div class="formPopup2 cart_param " id="popupCart">
                                     <div class="cardpopup">
 
                                         <div class="container">
@@ -136,16 +131,44 @@
             <div class="footer__wrapper">
                 <div class="footer__wrapper-nav">
                     <ul class="footer__nav">
-                        <li class="footer__nav-item">
-                            <a href="../index.html#Catalog" class="header__nav-link">
-                                Каталог
-                            </a>
-                        </li>
+
                         <li class="footer__nav-item">
                             <a href="../index.html" class="header__nav-link">Главная</a>
                         </li>
                         <li class="footer__nav-item">
                             <a href="../index.html#CARE" class="header__nav-link">Уход</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a class="header__nav-link" onclick="openFormFeedback()">
+                                Отзыв
+                            </a>
+                            <form class="loginPopup" method="post" action="../feedback/">
+                                {% csrf_token %}
+      <div class="formPopup" id="popupFormFeedback">
+        <form  class="banner__wrapper_log">
+          <p class="banner__content_log"> Оставь отзыв о нашем магазине</p>
+          <div class="banner__wrapper_email_log">
+                    <p class="banner__content_email_log">
+                        <input  type="email" name="email" placeholder="e-mail"  required class="footer__form-input form-input">
+                    </p>
+                </div>
+                <div class="banner__wrapper_password_log formFeedback">
+                    <p class="banner__content_password_log">
+                        <input type="text" name="message" placeholder="feedback" required class="footer__form-input form-input ">
+                    </p>
+                </div>
+          <button class="banner__content_button_log">Отправить</button>
+
+                <div class="banner__wrapper_forget_log">
+                    <button type="button" class="cancel_button" onclick="closePopup()">Закрыть окно</button>
+                </div>
+
+        </form>
+      </div>
+    </form>
+
+
+
                         </li>
                     </ul>
                     <ul class="footer__nav">
@@ -184,7 +207,7 @@
                 </div>
             </div>
             <p class="footer__copiwriter">
-                © 2022 Vyazan
+                © 2023 Vyazan
             </p>
         </div>
     </footer>

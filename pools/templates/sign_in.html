@@ -3,7 +3,8 @@
 {% block body%}
 
     <section class="banner_log">
-        <div class="container_log">
+        <form class="container_log" method="post" action="sign_in/">
+            {% csrf_token %}
             <div class="banner__wrapper_sign">
 
                 <p class="banner__content_log"> Стань частью большой</p>
@@ -12,32 +13,32 @@
 
                 <div class="banner__wrapper_email_log">
                     <p class="banner__content_email_log">
-                        <input type="text" placeholder="ФИО" required class="footer__form-input form-input">
+                        <input name="name" type="text" placeholder="ФИО" required class="footer__form-input form-input">
                     </p>
                 </div>
 
                 <div class="banner__wrapper_email_log">
                     <p class="banner__content_email_log">
-                        <input type="tel" placeholder="Введите номер телефона" required class="footer__form-input form-input">
+                        <input name="phone" type="tel" placeholder="Введите номер телефона" required class="footer__form-input form-input">
                     </p>
                 </div>
 
                 <div class="banner__wrapper_email_log">
                     <p class="banner__content_email_log">
-                        <input type="email" placeholder="Введите e-mail" required class="footer__form-input form-input">
+                        <input name="email" type="email" placeholder="Введите e-mail" required class="footer__form-input form-input">
                     </p>
                 </div>
 
                 <div class="banner__wrapper_password_log">
                     <p class="banner__content_password_log">
-                        <input type="password" placeholder="Придумайте пароль" required class="footer__form-input form-input">
+                        <input name="password" type="password" placeholder="Придумайте пароль" required class="footer__form-input form-input">
                     </p>
                 </div>
 
                 <button class="banner__content_button_log">Зарегистрироваться</button>
 
             </div>
-        </div>
+        </form>
     </section>
 
     <a name="contacts"></a>
