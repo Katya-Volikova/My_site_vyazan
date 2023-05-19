@@ -949,7 +949,7 @@ color: red;
     outline: none;
     border: none;
     border-bottom: 1px solid rgb(19, 18, 18);
-    max-width: 200px;
+    max-width: 270px;
     width: 100%;
     font-size: 15px;
 }
@@ -960,6 +960,11 @@ color: red;
 }
 .footer__form-btn {
     padding: 8px 10px;
+}
+.footer__elem-wrapper{
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 .footer__copiwriter {
     font-size: 15px;

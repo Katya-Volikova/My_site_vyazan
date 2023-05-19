@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from pools.controllers import index, sign_in
+from pools.controllers import index, sign_in, mailing
 from pools.controllers import feedback
 
 urlpatterns = [
@@ -11,5 +11,6 @@ urlpatterns = [
     path('forget.html', index.forget),
     path('feedback/', feedback.create),
     path('sign_in/', sign_in.create),
+    path('mailing/', mailing.create),
 
 ]

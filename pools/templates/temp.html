@@ -145,7 +145,7 @@
                             <form class="loginPopup" method="post" action="../feedback/">
                                 {% csrf_token %}
       <div class="formPopup" id="popupFormFeedback">
-        <form  class="banner__wrapper_log">
+        <div  class="banner__wrapper_log">
           <p class="banner__content_log"> Оставь отзыв о нашем магазине</p>
           <div class="banner__wrapper_email_log">
                     <p class="banner__content_email_log">
@@ -162,8 +162,7 @@
                 <div class="banner__wrapper_forget_log">
                     <button type="button" class="cancel_button" onclick="closePopup()">Закрыть окно</button>
                 </div>
-
-        </form>
+        </div>
       </div>
     </form>
 
@@ -191,20 +190,21 @@
                         </li>
                     </ul>
                 </div>
-                <div class="footer__elem">
+                <form class="footer__elem" method="post" action="../mailing/">
+                    {% csrf_token %}
                     <p class="header__nav-link">
                         Новости, скидки и акции для подписчиков
                         нашей рассылки:
                     </p>
                     <div class="footer__elem-wrapper">
                         <form class="footer__elem-form">
-                            <input type="email" placeholder="e-mail" required class="footer__form-input">
+                            <input name ="email" type="email" placeholder="e-mail" required class="footer__form-input">
                             <button type="submit" class="footer__form-btn btn">
                                 Подтвердить
                             </button>
                         </form>
                     </div>
-                </div>
+                </form>
             </div>
             <p class="footer__copiwriter">
                 © 2023 Vyazan
