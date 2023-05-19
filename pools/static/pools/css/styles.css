@@ -77,6 +77,11 @@ body {
     margin-bottom: 25px;
     margin-top: 25px;
 }
+.remove-item{
+    background-color: rgba(164, 189, 205, 0.3);
+    border: none;
+    transform: translate(0%, -30%);
+}
 .cardpopup{
     display: flex;
     justify-content: space-between;
@@ -93,6 +98,7 @@ body {
 .rightside{
     padding-left: 20px;
     padding-right: 20px;
+   /* height: 400px;*/
 }
 .Name{
     font-family: "Inter";
@@ -138,6 +144,7 @@ body {
     padding: 7px 98px 7px 98px;
     background-color: #B0BCD2;
     border: none;
+    transform: translate(0%, 30%);
     /*margin-top: 57px;*/
 
 
