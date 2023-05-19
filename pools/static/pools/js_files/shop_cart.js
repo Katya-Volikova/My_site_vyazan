@@ -38,7 +38,6 @@ function removeCartItem(product) {
       cart[itemIndex].total_price-=cart[itemIndex].price;
       all_cost-=cart[itemIndex].price;
     }
-
   }
 }
 
