@@ -44,9 +44,9 @@
                     </div>
                       <img src="{% static 'pools/img/header.png' %}" alt="model" class="mainScreen__pic-img" onclick="openPopup22()">
                         <div class="formPopup2" id="popupFormMain22">
-                                                                      <div class="cardpopup">
+                            <div class="cardpopup">
                                         <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/scaf.jpg' %}"  alt="card" class="card-img popupimg">
+                                            <img src="{% static 'pools/img/cards1/scaf.jpg' %}"  alt="card" class="card-img popupimg" style="height: 440px">
                                         </div>
                                         <div class="rightside">
                                         <div class="topBlock">
@@ -54,7 +54,7 @@
                                                 <p class="Name" >Шарф</p>
                                                 <p class="price">1435₽</p>
                                             </div>
-                                                <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+                                                <button type="button" class="cancelX" onclick="closePopup_scaf()">✕</button>
                                         </div>
                                             <div class="caracteristics">
                                                 <div class="item_caracteristic">
@@ -88,55 +88,56 @@
             </div>
         </div>
 
-    <section class="catalog">
+<section class="catalog">
         <div class="container">
             <a name = "Catalog"></a>
             <h2 class="catalog__heading heading" id="rofl">
                 Для нее
             </h2>
+                <div class="catalog__wrapper" style="display: flex; flex-wrap: wrap; width: 1000px">
 
+                {% for item in items.all %}
+                <div href="#" class="catalog__wrapper-item item-1" style="width:300px; margin-right: 20px; margin-bottom: 10px;">
+                    <div>
+                      <!-- class="two_pict"-->
+<!--                        <img src={{ item.img }}  alt="card"  onclick="openPopup()" style="width:300px">-->
+                        <img src={{ item.img }}  alt="card" style="width:300px" onclick="lol(event)" id={{ item.id_item }}>
 
-            <div class="catalog__wrapper">
-                <div href="#" class="catalog__wrapper-item item-1">
-
-                    <div class="two_pict">
-                        <img src="{% static 'pools/img/cards1/1.png' %}"  alt="card" class="card-img" onclick="openPopup()">
-                               <div class="formPopup2" id="popupFormMain">
-                                                                      <div class="cardpopup">
+                        <!--class="card-img"-->
+                               <div class="formPopup2 " id={{ item.id_popup }}>
+                                   <div class="cardpopup">
                                         <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/1.png' %}"  alt="card" class="card-img popupimg">
+                                            <img src={{ item.img }}  alt="card" class="card-img popupimg" style="height: 450px">
                                         </div>
                                         <div class="rightside">
                                         <div class="topBlock">
+
                                             <div class="namecard">
-                                                <p class="Name" >Свитер свободного кроя крупной вязки</p>
-                                                <p class="price">3745₽</p>
+                                                <p class="Name" >{{ item.name }}</p>
+                                                <p class="price">{{ item.cost }}₽</p>
                                             </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+
+                                            <button type="button" class="cancelX" onclick="closePopup1()">✕</button>
                                         </div>
                                             <div class="caracteristics">
                                                 <div class="item_caracteristic">
                                                     <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Синий</p>
+                                                    <p class="objectcaracteristic">{{ item.color }}</p>
                                                 </div>
                                                 <div class="item_caracteristic">
                                                     <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
+                                                    <p class="objectcaracteristic">{{ item.size }}</p>
                                                 </div>
                                                 <div class="item_caracteristic">
                                                     <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
+                                                    <p class="objectcaracteristic">{{ item.composition }}</p>
                                                 </div>
                                                 <div class="descriptionitem">
                                                     <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая крупная вязка</p>
-                                                    <p>Воротник стойка</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
+                                                    {{ item.description }}
                                                 </div>
                                             </div>
-                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, `lol`)">
+                                            <button class="button_item" onclick="addToCart(`{{ item.name }}`, {{ item.cost }}, `lol`)">
                                                 <p class="button_item_text" >Добавить в корзину</p>
 
                                             </button>
@@ -146,11 +147,7 @@
 
                               </div>
 
-
-
-
-
-                        <div class = "one_pict" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, `lol`)">
+                        <div class = "one_pict" onclick="addToCart(`{{ item.name }}`, {{ item.cost }}, `lol`)">
                             <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
                         </div>
                     </div>
@@ -158,307 +155,20 @@
                     <a href="#" class="catalo-item__price mainScreen__products-item" style="color: #fff;">
                        
                         <p class="products-item__name">
-                            Свитер свободного кроя крупной вязки
+                            {{ item.name }}
                         </p>
                         <p class="products-item__price">
-                            3745₽
+                            {{ item.cost }}₽
                         </p>
                     </a>
                 </div>
-                <div class="catalog__wrapper-item item-2">
-                    <div class="two_pict">
-                      <img src="{% static 'pools/img/cards1/2.png' %}" alt="card" class="card-img" onclick="openPopup2()">
+                    {% endfor %}
 
-                              <div class="formPopup2" id="popupFormMain2">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/hat_popup.jpg' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Шапка-бини крупной вязки</p>
-                                                <p class="price">1155₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Зеленый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Универсальная форма</p>
-                                                    <p>Английская резинка</p>
-                                                    <p>Крупная вязка 3 класса в 5 нитей</p>
-                                                    <p>Объёмная посадкау</p>
-                                                    <p>Объёмная посадкау</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item">
-                                                <p class="button_item_text" onclick="addToCart('Шапка-бини крупной вязки', 1155, 'lol')">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-
-                    <div class = "one_pict" id="one_pict1" onclick="addToCart('Шапка-бини крупной вязки', 1155, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                    </div>
-                </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Шапка-бини крупной вязки
-                        </p>
-                        <p class="products-item__price">
-                            1155₽
-                        </p>
-                    </a>
-                    
-                </div>
-                <div class="catalog__wrapper-item item-3">
-                     <img src="{% static 'pools/img/cards1/3.png' %}" alt="card" class="card-img" onclick="openPopup3()">
-                    <div class="formPopup2" id="popupFormMain3">
-                        <div class="cardpopup">
-                            <div class="imgcard">
-                                <img src="{% static 'pools/img/cards1/3.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                        <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер свободного кроя крупной вязки</p>
-                                                <p class="price">3745₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                        </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Синий</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая крупная вязка</p>
-                                                    <p>Воротник стойка</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя крупной вязки', 3745, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                </div>
-                <div class="catalog__wrapper-item item-4">
-                    <div class = "two_pict">
-                         <img src="{% static 'pools/img/cards1/4.png' %}" alt="card" class="card-img" onclick="openPopup4()">
-                        <div class="formPopup2" id="popupFormMain4">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/4.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер свободного кроя в полоску</p>
-                                                <p class="price">4356₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Белый в синюю полоску</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая крупная вязка</p>
-                                                    <p>Воротник стойка</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер свободного кроя в полоску', 4356, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                        <div class = "one_pict" onclick="addToCart('Свитер свободного кроя в полоску', 4356, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-
-
-                    <a href="#" class="mainScreen__products-item">
-                        <p class="products-item__name">
-                            Свитер свободного кроя в полоску
-                        </p>
-                        <p class="products-item__price">
-                            4356₽
-                        </p>
-
-                    </a>
-                </div>
-               
-                <div  class="catalog__wrapper-item item-5">
-                    <div class = "two_pict">
-                    <img src="{% static 'pools/img/cards1/5.png' %}" alt="card" class="card-img" onclick="openPopup5()">
-                        <div class="formPopup2" id="popupFormMain5">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/white_switer.jpg' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Кроп-свитер крупной вязки с аранами</p>
-                                                <p class="price">4165₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Белый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Укороченная длина</p>
-                                                    <p>Свитер с аранами</p>
-                                                    <p>Воротник стойка</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Кроп-свитер крупной вязки с аранами', 4165, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Кроп-свитер крупной вязки с аранами', 4165, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="mainScreen__products-item">
-                        <p class="products-item__name">
-                            Кроп-свитер крупной вязки с аранами
-                        </p>
-                        <p class="products-item__price">
-                            4165₽
-                        </p>
-                    </a>
-                </div>
-               
-                <div class="catalog__wrapper-item item-6">
-                    <div class = "two_pict">
-                     <img src="{% static 'pools/img/cards1/6.png' %}" alt="card" class="card-img" onclick="openPopup6()">
-                        <div class="formPopup2" id="popupFormMain6">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/cardigan.jpg' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Кроп-кардиган с косами крупной вязки</p>
-                                                <p class="price">3465₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Терракот</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Кроп-кардиган свободного кроя</p>
-                                                    <p>Кардиган на пуговицах</p>
-                                                    <p>Фактурные косы</p>
-                                                    <p>Укороченная длина</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Кроп-кардиган с косами крупной вязки', 3465, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                        <div class = "one_pict" onclick="addToCart('Кроп-кардиган с косами крупной вязки', 3465, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="mainScreen__products-item">
-                        <p class="products-item__name">
-                            Кроп-кардиган с косами крупной вязки
-                        </p>
-                        <p class="products-item__price">
-                            3465₽
-                        </p>
-                    </a>
-                </div>
-            </div>
         </div>
-
+        </div>
     </section>
+
+
     <section class="banner">
         <div class="container">
             <div class="banner__wrapper">
@@ -488,10 +198,10 @@
                         Сертификаты
                     </button>
                     <div class="formPopup2" id="popupFormMain21">
-                                  <div class="cardpopup">
+                                  <div class="cardpopup_ser">
 
                                         <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards1/certificate.jpg' %}"  alt="card" class="card-img popupimg">
+                                            <img src="{% static 'pools/img/cards1/certificate.jpg' %}"  alt="card" class="card-img popupimg" style="width: 752px; max-height: 539px; height: 100%;" >
                                         </div>
  <button type="button" class="cancelX" onclick="closePopup_ser()">✕</button>
                                     </div>
@@ -502,363 +212,6 @@
         </div>
     </section>
   
-    <section class="catalog catalog2">
-        <div class="container">
-            <h2 class="catalog__heading heading">
-                Для него
-            </h2>
-            <div class="catalog__wrapper">
-                <div class="catalog__wrapper-item item-1">
-
-                    <img src="{% static 'pools/img/cards2/1.png' %}" alt="card" class="card-img" onclick="openPopup7()">
-                            <div class="formPopup2" id="popupFormMain7">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards2/blue_switer.jpg' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер с воротником-стойкой</p>
-                                                <p class="price">3499₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Синий</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая вязка</p>
-                                                    <p>Воротник стойка</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер с воротником-стойкой', 3499, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-
-                </div>
-                <div class="catalog__wrapper-item item-2">
-                     <div class="two_pict">
-                    <img src="{% static 'pools/img/cards2/2.png' %}" alt="card" class="card-img" onclick="openPopup8()">
-                         <div class="formPopup2" id="popupFormMain8">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards2/blue_switer.jpg' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер с воротником-стойкой</p>
-                                                <p class="price">3499₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Синий</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая вязка</p>
-                                                    <p>Воротник стойка</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер с воротником-стойкой', 3499, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-
-                    <div class = "one_pict" onclick="addToCart('Свитер с воротником-стойкой', 3499, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Свитер с воротником-стойкой
-                        </p>
-                        <p class="products-item__price">
-                            3499₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-3">
-                    <div class="two_pict">
-                     <img src="{% static 'pools/img/cards2/3.png' %}" alt="card" class="card-img" onclick="openPopup9()">
-                         <div class="formPopup2" id="popupFormMain9">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards2/3.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" > Шапка в рубчик</p>
-                                                <p class="price">1155₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Серый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Универсальная форма</p>
-                                                    <p>Английская резинка</p>
-                                                    <p>Гладкая вязка</p>
-                                                    <p>Объёмная посадка</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Шапка в рубчик', 1155, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Шапка в рубчик', 1155, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Шапка в рубчик
-                        </p>
-                        <p class="products-item__price">
-                            1155₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-4">
-
-                    <div class="two_pict">
-                   <img src="{% static 'pools/img/cards2/4.png' %}" alt="card" class="card-img" onclick="openPopup10()">
-                        <div class="formPopup2" id="popupFormMain10">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards2/4.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Жаккардовый свитер с узором</p>
-                                                <p class="price">3999₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Синий c узором</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая вязка</p>
-                                                    <p>Круглый ворот</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Жаккардовый свитер с узором', 3999, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Жаккардовый свитер с узором', 3999, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="mainScreen__products-item">
-                        <p class="products-item__name">
-                            Жаккардовый свитер с узором
-                        </p>
-                        <p class="products-item__price">
-                            3999₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-5">
-
-                     <div class="two_pict">
-                   <img src="{% static 'pools/img/cards2/5.png' %}" alt="card" class="card-img" onclick="openPopup11()">
-                         <div class="formPopup2" id="popupFormMain11">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards2/5.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Жилет с деталями из кружева кроше</p>
-                                                <p class="price">3045₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Песчаный</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая крупная вязка</p>
-                                                    <p>Круглый ворот</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Жилет с деталями из кружева кроше', 3045, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Жилет с деталями из кружева кроше', 3045, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="mainScreen__products-item">
-                        <p class="products-item__name">
-                            Жилет с деталями из кружева кроше
-                        </p>
-                        <p class="products-item__price">
-                            3045₽
-                        </p>
-                    </a>
-                </div>
-                <div class="catalog__wrapper-item item-6">
-
-                     <div class="two_pict">
-                   <img src="{% static 'pools/img/cards2/6.png' %}" alt="card" class="card-img" onclick="openPopup12()">
-                         <div class="formPopup2" id="popupFormMain12">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards2/6.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер с воротником на молнии</p>
-                                                <p class="price">4599₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Бежевый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая вязка</p>
-                                                    <p>Воротник стойка на молнии</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер с воротником на молнии', 4599, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Свитер с воротником на молнии', 4599, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="mainScreen__products-item">
-                        <p class="products-item__name">
-                            Свитер с воротником на молнии
-                        </p>
-                        <p class="products-item__price">
-                            4599₽
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <section class="banner">
@@ -893,371 +246,7 @@
         </div>
     </section>
 
-    <section class="catalog catalog3">
-        <div class="container">
-            <h2 class="catalog__heading heading">
-                Детская коллекция
-            </h2>
-            <div class="catalog__wrapper">
-                <div href="#" class="catalog__wrapper-item item-1">
 
-                    <div class="two_pict">
-                   <img src="{% static 'pools/img/card4/1.png' %}" alt="card" class="card-img" onclick="openPopup13()">
-                        <div class="formPopup2" id="popupFormMain13">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/card4/1.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер поло</p>
-                                                <p class="price">1380₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Бежевый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">Единый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">50% шерсть мериноса/ 50% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая вязка</p>
-                                                    <p>Поло</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер поло', 1380, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Свитер поло', 1380, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Свитер поло
-                        </p>
-                        <p class="products-item__price">
-                            1380₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-2">
-
-                     <div class="two_pict">
-                   <img src="{% static 'pools/img/card4/2.png' %}" alt="card" class="card-img" onclick="openPopup14()">
-                          <div class="formPopup2" id="popupFormMain14">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/card4/2.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Костюм</p>
-                                                <p class="price">1970₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Пыльная роза</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">25</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">20% шерсть мериноса/ 80% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Детский костюм</p>
-                                                    <p>Матриал тянется</p>
-                                                    <p>Матриал гиппоалергенный</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Костюм', 1970, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Костюм', 1970, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Костюм
-                        </p>
-                        <p class="products-item__price">
-                            1970₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-3">
-
-                     <div class="two_pict">
-                   <img src="{% static 'pools/img/card4/3.png' %}" alt="card" class="card-img" onclick="openPopup15()">
-                         <div class="formPopup2" id="popupFormMain15">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/card4/3.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Толстовка</p>
-                                                <p class="price">1400₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Слоновая кость</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">25</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">20% шерсть мериноса/ 80% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Худи</p>
-                                                    <p>Матриал тянется</p>
-                                                    <p>Матриал гиппоалергенный</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Толстовка', 1400, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Толстовка', 1400, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Толстовка
-                        </p>
-                        <p class="products-item__price">
-                            1400₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-4">
-
-                     <div class="two_pict">
-                    <img src="{% static 'pools/img/card4/4.png' %}" alt="card" class="card-img" onclick="openPopup16()">
-                          <div class="formPopup2" id="popupFormMain16">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/cards3/yellow.jpg' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер</p>
-                                                <p class="price">1860₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Оранжевый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">27</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">20% шерсть мериноса/ 80% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Гладкая крупная вязка</p>
-                                                    <p>Круглый ворот</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер', 1860, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Свитер', 1860, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Свиттер
-                        </p>
-                        <p class="products-item__price">
-                            1860₽
-                        </p>
-                    </a>
-                </div>
-                <div href="#" class="catalog__wrapper-item item-5">
-
-                    <div class="two_pict">
-                    <img src="{% static 'pools/img/card4/5.png' %}" alt="card" class="card-img" onclick="openPopup17()">
-                        <div class="formPopup2" id="popupFormMain17">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/card4/5.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Джемпер</p>
-                                                <p class="price">1580₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Желтый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">26</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">20% шерсть мериноса/ 80% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Круглый ворот</p>
-                                                    <p>Спущенное плечо</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Джемпер', 1580, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Джемпер', 1580, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Джемпер
-                        </p>
-                        <p class="products-item__price">
-                            1580₽
-                        </p>
-                    </a>
-                </div>
-                <div class="catalog__wrapper-item item-6">
-
-                    <div class="two_pict">
-                    <img src="{% static 'pools/img/card4/6.png' %}" alt="card" class="card-img" onclick="openPopup18()">
-                         <div class="formPopup2" id="popupFormMain18">
-                                  <div class="cardpopup">
-                                        <div class="imgcard">
-                                            <img src="{% static 'pools/img/card4/6.png' %}"  alt="card" class="card-img popupimg">
-                                        </div>
-                                        <div class="rightside">
-                                            <div class="topBlock">
-                                            <div class="namecard">
-                                                <p class="Name" >Свитер</p>
-                                                <p class="price">980₽</p>
-                                            </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
-                                                </div>
-                                            <div class="caracteristics">
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Цвет:</p>
-                                                    <p class="objectcaracteristic">Белый</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Размер:</p>
-                                                    <p class="objectcaracteristic">24</p>
-                                                </div>
-                                                <div class="item_caracteristic">
-                                                    <p class="namecaracteristic">Состав:</p>
-                                                    <p class="objectcaracteristic">20% шерсть мериноса/ 80% акрил</p>
-                                                </div>
-                                                <div class="descriptionitem">
-                                                    <p class="namecaracteristic">Описание:</p>
-                                                    <p>Свободный крой</p>
-                                                    <p>Круглый ворот</p>
-                                                    <p>Мягкое плетение</p>
-                                                    <p>Приятный к телу</p>
-                                                </div>
-                                            </div>
-                                            <button class="button_item" onclick="addToCart('Свитер', 980, 'lol')">
-                                                <p class="button_item_text">Добавить в корзину</p>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                              </div>
-                    <div class = "one_pict" onclick="addToCart('Свитер', 980, 'lol')">
-                            <img src="{% static 'pools/img/basket_small.svg' %}" class="card-img_buy">
-                        </div>
-                    </div>
-                    <a href="#" class="catalo-item__price mainScreen__products-item">
-                        <p class="products-item__name">
-                            Свитер
-                        </p>
-                        <p class="products-item__price">
-                            980₽
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="care">
         <a name = "CARE"></a>
@@ -1298,7 +287,7 @@
                             <div class="formPopup2" id="popupFormMain19">
                                   <div class="cardpopup">
                                         <div class="imgcard">
-                                            <img src="{% static 'pools/img/care/brush.png' %}"  alt="card" class="card-img popupimg">
+                                            <img src="{% static 'pools/img/care/brush.png' %}"  alt="card" class="card-img popupimg" style="height: 440px">
                                         </div>
                                         <div class="rightside">
                                             <div class="topBlock">
@@ -1306,7 +295,7 @@
                                                 <p class="Name" >Щетка для удаления катышек</p>
                                                 <p class="price">499₽</p>
                                             </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+                                            <button type="button" class="cancelX" onclick="closePopup_brush()">✕</button>
                                                 </div>
                                             <div class="caracteristics">
                                                 <div class="item_caracteristic">
@@ -1356,7 +345,7 @@
                             <div class="formPopup2" id="popupFormMain20">
                                   <div class="cardpopup">
                                         <div class="imgcard">
-                                            <img src="{% static 'pools/img/care/orig.webp' %}"  alt="card" class="card-img popupimg">
+                                            <img src="{% static 'pools/img/care/orig.webp' %}"  alt="card" class="card-img popupimg" style="height: 440px">
                                         </div>
                                         <div class="rightside">
                                             <div class="topBlock">
@@ -1364,7 +353,7 @@
                                                 <p class="Name" >Гель для стирки вещей</p>
                                                 <p class="price">760₽</p>
                                             </div>
-                                            <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+                                            <button type="button" class="cancelX" onclick="closePopup_gel()">✕</button>
                                                 </div>
                                             <div class="caracteristics">
                                                 <div class="item_caracteristic">

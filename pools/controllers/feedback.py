@@ -7,3 +7,9 @@ def create(request):
     feedback.text = request.POST.get("message")
     feedback.save()
     return redirect('../index.html/')
+
+
+def index(request):
+    feedbacks = Feedback.objects
+    content = {'feedbacks': feedbacks}
+    return render(request, 'feedback.html', content)

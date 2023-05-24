@@ -14,3 +14,6 @@ def forget(request):
 def basket(request):
     return render(request, 'basket.html', {})
 
+#def feedback(request):
+   #return render(request, 'feedback.html', {})
+

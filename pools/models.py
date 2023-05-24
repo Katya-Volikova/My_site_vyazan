@@ -13,3 +13,17 @@ class Sign_in(models.Model):
 
 class Mailing(models.Model):
     email = models.CharField(max_length=255)
+
+
+class Item(models.Model):
+    id_item = models.IntegerField()
+    id_popup = models.TextField()
+    img = models.TextField()
+    count_this_item = models.IntegerField()
+    name = models.TextField()
+    cost = models.IntegerField()
+    color = models.CharField(max_length=20)
+    composition = models.CharField(max_length=255)
+    description = models.TextField()
+    size = models.CharField(max_length=20)
+

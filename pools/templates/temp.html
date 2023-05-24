@@ -26,21 +26,19 @@
                 <div class="header__nav-wrapper header__nav-wrapper-mob">
                     <ul class="header__nav-list header__nav-left header__nav-list-mob">
                         <li class="header__nav-item">
-                            <a href="../index.html#Catalog" class="header__nav-link" id="catalog">Каталог</a>
-
+                            <a href="../index/#Catalog"class="header__nav-link" id="catalog" onclick="popupCat">Каталог</a>
                         </li>
 
-
                         <li class="header__nav-item">
-                            <a href="../index.html#CARE" class="header__nav-link">Уход</a>
+                            <a href="../index/#CARE" class="header__nav-link">Уход</a>
 
                         </li>
                         <li class="header__nav-item">
-                            <a href="../about_us.html" class="header__nav-link">Фабрика</a>
+                            <a href="../about_us" class="header__nav-link">Фабрика</a>
                         </li>
                     </ul>
                     <div class="header__nav-logo">
-                        <a href="../index.html" class="header__nav-link">
+                        <a href="../index/" class="header__nav-link">
                         <img src="{% static 'pools/img/logo.svg' %}" alt="Вязань" class="img-logo">
                         </a>
                     </div>
@@ -72,7 +70,7 @@
                 <div class="banner__wrapper_forget_log">
                     <a href="../forget.html" class="banner__content_forget_log"> Забыли пароль?</a>
                     <a href="../sign_in.html" class="banner__content_sign_log"> Зарегистрироваться</a>
-                    <button type="button" class="cancel_button" onclick="closePopup()">Закрыть окно входа</button>
+                    <button type="button" class="cancel_button" onclick="closePopup_vhod()">Закрыть окно входа</button>
                 </div>
 
         </form>
@@ -81,10 +79,10 @@
                         </li>
                         <li class="header__nav-item">
                             <a>
-                                 <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" class="icon-cart" onclick="openPopupCart()">
+                                 <img src="{% static 'pools/img/icons/cart.svg' %}" alt="cart" id="cartModel" class="icon-cart" onclick="openPopupCart()">
 
                                 <div class="formPopup2 cart_param " id="popupCart">
-                                    <div class="cardpopup">
+                                    <div class="cardpopup cardpopup_scroll">
 
                                         <div class="container">
                                             <div class="head_cart">
@@ -92,7 +90,7 @@
                                             <h2 class="catalog__heading heading heading_basket catalog__heading_basket">
                                                 Покупки:
                                             </h2>
-                                                <button type="button" class="cancelX" onclick="closePopup()">✕</button>
+                                                <button type="button" class="cancelX" onclick="closePopup_card()">✕</button>
                                             </div>
                                             <div id="cartItems">
 
@@ -160,7 +158,7 @@
           <button class="banner__content_button_log">Отправить</button>
 
                 <div class="banner__wrapper_forget_log">
-                    <button type="button" class="cancel_button" onclick="closePopup()">Закрыть окно</button>
+                    <button type="button" class="cancel_button" onclick="closePopup_feedback()">Закрыть окно</button>
                 </div>
         </div>
       </div>
